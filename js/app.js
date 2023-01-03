@@ -20,8 +20,9 @@ function closeNav(){
 document.addEventListener('DOMContentLoaded', () => {
 
 const seleccionPaises = document.querySelector('#pais');
- 
-fetch('https://restcountries.com/v3.1/all')
+// https://restcountries.com/v3.1/all
+fetch('https://restcountries.com/v2/all')
+
     .then(res => {
         return res.json();
     })
@@ -29,8 +30,10 @@ fetch('https://restcountries.com/v3.1/all')
         let output = '';
         output = `<option disabled selected> Seleccione su país</option> `
         data.forEach(pais => {
-            output += `<option value="${pais.name.common}"> ${pais.name.common} </option>`;
+            //   console.log(pais.ccn3)
+            output += `<option value="${pais.name}"> ${pais.name} </option>`;
         });
+        // console.log(output)
         seleccionPaises.innerHTML = output;
     })
     .catch(err => {
