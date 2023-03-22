@@ -12,6 +12,11 @@
 
 a {
     text-decoration: none !important;
+    color: black;
+}
+
+li {
+    list-style: none;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -42,10 +47,44 @@ h3 {
     align-items: center;
 }
 
+/* *Wsp */
+
+.float-w {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 3rem;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 24px;
+    z-index: 100;
+}
+
+.my-float {
+    display: grid;
+    margin-top: 13px;
+    margin-left: 2px;
+}
+
+.float-w:hover {
+    color: white !important;
+}
+
+.my-float:hover {
+    transition: all .2s ease;
+    transform: scale(1.2);
+}
+
 
 .background-grad {
     background: linear-gradient(rgb(245, 245, 245) 0%, rgb(255, 255, 255) 100%)
 }
+
+
+/* *MENU */
 
 
 .main-nav__list-item hr {
@@ -144,6 +183,14 @@ h3 {
 }
 
 
+.fa-chevron-up {
+    transition: all 0.3s ease;
+ }
+.btn-nav-accordion.collapsed .fa-chevron-up {
+  transform: rotate(180deg);
+}
+
+
 .main-nav__list {
     position: absolute;
     top: 60px !important;
@@ -166,7 +213,6 @@ h3 {
     border-bottom: 2px solid var(--third-color) !important;
     border-top: 1px solid var(--main-color) !important;
     background: white;
-
     font-size: 18px;
     font-weight: bold;
 
@@ -195,13 +241,13 @@ h3 {
 
 .main-nav__link:link,
 .main-nav__link:visited {
-    line-height: 1.2;
     color: black;
     text-decoration: none;
     display: block;
     transition: border-bottom .3s;
     border: 2px solid transparent;
-    margin: 10px;
+    width: fit-content;
+    margin: auto;
 }
 
 .main-nav__link:hover,
@@ -224,29 +270,31 @@ h3 {
     position: relative;
     top: 3.5rem;
     z-index: -1;
+}
+
+.carousel-caption{
+    /* background-color: rgba(0, 0, 0, .65);
+    border: 1px solid var(--second-color); */
+    padding: 0px !important;
+    right: 30% !important;
+    left: 30% !important;
 
 }
 
-.banner-descripcion p {
-    position: absolute;
-    top: 75%;
-    left: 38%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    padding: 15px;
-    color: white;
-    font-weight: bold;
-    font-size: 1.25rem;
-    font-family: Quicksand, sans-serif;
-    background-color: rgba(0, 0, 0, .5);
-
-    border: 1px solid var(--second-color);
+.carousel-caption p{
+    margin-bottom: 0.5rem;
 
 }
 
-.banner-descripcion {
+.banner-descripcion p,
+.banner-descripcion a {
+    /* margin-top: .5rem; */
+    font-size: 16px;
+    font-weight: 600;
     z-index: 1;
-}
+    }
+
+    
 
 
 .card-img-overlay {
@@ -284,11 +332,25 @@ h3 {
 
 
 
+.carousel-item img {
+    height: auto;
+    max-height: 250px;
+    width: auto !important;
+}
+
+
+.btn-primary{
+    order: initial;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .65) !important;
+    border: 1px solid var(--second-color);
+
+}
 
 /* * MENU DESPLEGABLE DE CURSOS */
 
 
-.dropCursos {
+/* .dropCursos {
     display: none;
 }
 
@@ -324,7 +386,7 @@ h3 {
 
 .dropdawn-element a {
     padding: 1px !important;
-}
+} */
 
 
 
@@ -347,7 +409,8 @@ h3 {
 }
 
 .formInfo {
-    width: 400px;
+    max-width: 350px;
+    width: 100%;
     padding: 40px 20px;
     border-width: 3px;
     border-style: solid;
@@ -408,6 +471,8 @@ h3 {
     margin-top: 1.5rem;
     width: 20rem !important;
     border: 1px solid var(--second-color);
+    box-shadow: 0px 1px 5px #888888;
+
 }
 
 .tarjetas-escuelas .btn {
@@ -421,6 +486,7 @@ h3 {
 .selecCampus {
     margin: 0px 10px;
 }
+
 
 .nosotros h2 {
     font-size: 2rem;
@@ -505,7 +571,7 @@ h3 {
 
 
 .formInfo .btn {
-    width: 350px !important;
+    width: 100% !important;
     font-weight: 600;
     color: white;
     border: 1px solid var(--second-color) !important;
@@ -516,6 +582,12 @@ h3 {
     display: flex;
     align-items: flex-end;
 
+}
+
+.iconos {
+    left: -80px;
+    top: 20px;
+    position: relative;
 }
 
 .iconos a:hover {
@@ -559,15 +631,44 @@ h3 {
         min-height: calc(6vh - 30px);
     }
 
-    .banner {
-        top: 2.5rem;
+    .carousel-caption{
+        background-color: rgba(0, 0, 0, .65);
+        border: 1px solid var(--second-color);
+        right: 30% !important;
+        left: 30% !important;
+        padding: 1.25rem 0px !important;
+    
+    }
+
+    .carousel-item{
         z-index: -1;
+        width: 100%;
+        height: 400px;
+    }
+
+    .carousel-item img {
+        height: auto;
+        max-height: 400px;
+        width: 100% !important;
+    }
+
+
+
+
+    .banner {
+        /* top: 2.5rem; */
+        z-index: -1;
+        /* width: 100%;
+        height: 500px; */
     }
 
 
 
     .banner img {
-        height: 600px;
+        /* height: 600px; */
+        z-index: -1;
+        height: 100%;
+        width: 100%;
     }
 
 
@@ -645,15 +746,16 @@ h3 {
         border: transparent !important;
     }
 
-    .drop-link {
+
+    .open-paises__main {
+        position: absolute;
         background: white;
-        position: fixed;
-        width: 148px;
-        margin: 0px !important;
-        border: 1px solid transparent;
-
-
     }
+
+
+
+
+
 
 
     /* * NOSOTROS */
@@ -684,7 +786,7 @@ h3 {
 
 
     .tarjetas-escuelas .escuelas {
-        column-gap: 5rem;
+        column-gap: 1rem;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -699,6 +801,7 @@ h3 {
     }
 
     .tarjetas-escuelas img {
+        height: 150px;
         max-height: 150px;
     }
 
@@ -739,14 +842,15 @@ h3 {
     }
 
     .infoFoot li {
-        padding: 8px;
+        padding: .25rem;
         margin: 2px;
     }
 
     /* *FORM INFO*/
 
     .formInfo {
-        width: 700px;
+        max-width: fit-content;
+        width: 700px !important;
         margin: 30px;
         padding: 50px 60px 50px 60px;
         border-width: 3px;
@@ -761,16 +865,26 @@ h3 {
         background-color: var(--main-color) !important;
     }
 
+    .infoContacto {
+        text-align: center;
+        padding: 0;
+    }
 
 
 
 }
 
-@media (min-width: 800px) {
+@media (max-width: 800px) {
     .banner {
         width: 50%;
         margin: auto;
     }
+
+    .carousel-item img{
+        width: 100% !important;
+    }
+
+    
 }
 
 

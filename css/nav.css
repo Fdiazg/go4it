@@ -1,0 +1,97 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+
+.open-menu{
+    right: 0;
+    margin: 0 .5rem;
+
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.menu {
+    margin: auto;
+    margin-right: 0px;
+    background: white;
+
+}
+
+.main-nav__list {
+    padding: .5rem;
+}
+
+.main-nav__link {
+    display: grid;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: .5rem;
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+#cursosIngles:focus, 
+#irlanda:focus, 
+#australia:focus, 
+#malta:focus, 
+#nuevaZelanda:focus{
+    background: rgb(236 250 255 / 68%)
+}
+
+
+
+
+.sub-nav__sublist {
+    max-height: 0;
+    transition: max-height 0.4s ease-out;
+    overflow: hidden;
+    padding: 0px;
+
+}
+
+
+.open-paises__main {
+    max-height: 0;
+    transition: max-height 0.4s ease-out;
+    overflow: hidden;
+    padding: 0px;
+    max-width: 100%;
+    width: 190px;
+
+}
+
+
+.sub-nav__sublist-open {
+    height: auto;
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+    padding: 0px;
+    max-width: 100%;
+    width: 190px;
+}
+
+.open-paises__main li a::before{
+    content: "• ";
+    
+}
+
+.open-paises__ciudades li a::before {
+    content: "» ";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

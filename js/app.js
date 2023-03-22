@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // TODO borrar FORM
-document.addEventListener('DOMContentLoaded', function(){
-    let formulario = document.getElementById('form');
-    formulario.addEventListener('submit', function(event) {
-      setTimeout(function() {
-        formulario.reset();
-      }, 1500);
-    });
-  });
+// document.addEventListener('DOMContentLoaded', function(){
+//     let formulario = document.getElementById('form');
+//     formulario.addEventListener('submit', function(event) {
+//       setTimeout(function() {
+//         formulario.reset();
+//       }, 1500);
+//     });
+//   });
 
 
   window.addEventListener('load', function() {
@@ -66,6 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+    closeAllCiudades();
+
 });
 
 
@@ -87,21 +89,21 @@ document.addEventListener("click", function(event) {
 
 // TODO Despliegue cursos
 
-cursosIngles = document.querySelector("#cursos");
-dropCursos = document.querySelector('.dropCursos');
+// cursosIngles = document.querySelector("#cursos");
+// dropCursos = document.querySelector('.dropCursos');
 
-cursosIngles.addEventListener('click', () => {
-    dropCursos.classList.toggle('dropCursos')
+// cursosIngles.addEventListener('click', () => {
+//     dropCursos.classList.toggle('dropCursos')
     
-})
+// })
 
-irlanda = document.querySelector("#irlanda")
+// irlanda = document.querySelector("#irlanda")
 
-irlanda.addEventListener('click', () =>{
-    dropCursos.classList.toggle('dropCursos')
-    menuButton.classList.remove("open-menu--open");
+// irlanda.addEventListener('click', () =>{
+//     dropCursos.classList.toggle('dropCursos')
+//     menuButton.classList.remove("open-menu--open");
 
-} )
+// } )
 
 
 
@@ -138,3 +140,56 @@ links.forEach(link => {
     });
   });
 });
+
+
+
+
+
+
+
+const paises = document.querySelectorAll(".open-paises")
+const openCiudades = document.querySelectorAll(".open-paises__ciudades")
+
+for (let i = 0; i < paises.length; i++) {
+  paises[i].addEventListener("click", () => {
+    // Verificar si la lista desplegable del país actual está abierta
+    const isCiudadesOpen = openCiudades[i].classList.contains('sub-nav__sublist-open')
+    // Cerrar todas las listas desplegables abiertas
+    closeAllCiudades()
+    // Si la lista desplegable del país actual estaba cerrada, abrirla
+    if (!isCiudadesOpen) {
+      openCiudades[i].classList.toggle('sub-nav__sublist-open')
+    }
+  })
+}
+
+function closeAllCiudades() {
+  for (let i = 0; i < openCiudades.length; i++) {
+    openCiudades[i].classList.remove('sub-nav__sublist-open')
+  }
+}
+
+
+// !open-paises
+
+
+const openPaises = document.querySelector("#cursosIngles")
+const openPaisesMain = document.querySelector(".open-paises__main")
+const arrow = document.querySelector(".bi-chevron-down")
+
+openPaises.addEventListener("click", () => {
+    openPaisesMain.classList.toggle("sub-nav__sublist-open")
+    console.log(arrow)
+    closeAllCiudades()
+})
+
+
+
+
+// const button = document.querySelector('.btn-primary');
+
+// button.addEventListener('click', () => {
+//   console.log('El usuario ha hecho clic en el botón del banner.');
+// });
+
+

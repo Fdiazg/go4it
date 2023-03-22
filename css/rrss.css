@@ -1,5 +1,5 @@
-.social-btn{
-display: none;
+.social-btn {
+  display: none;
 
 }
 
@@ -8,13 +8,14 @@ display: none;
 @media (min-width: 800px) {
 
 
-.social-btn {
+  .social-btn {
+    color: white;
     display: flex;
-    width: 178px;
+    width: 100%;
     align-items: center;
     justify-content: flex-end;
-    padding-left: 30px;
-     padding-right: 20px; 
+    padding-left: 10px;
+    padding-right: 16px;
     padding-top: 5px;
     padding-bottom: 5px;
     border: 1px;
@@ -22,59 +23,65 @@ display: none;
     border-top-right-radius: 30px;
     margin-bottom: 5px;
     position: relative;
-    left: -140px;
-    transition: left 1s;
+    left: 0px;
     align-items: center;
-  }
-  .social-btn:hover {
-    left: -10px;
-    transition: left 1s;
-  }
-  
-  .social {
-    position: fixed;
-    top: 200px;
     z-index: 1;
   }
+
+  .social-btn i {
+    transform: scale(1.2)
+  }
+
+  .social-btn i:hover {
+    transition: all .2s ease;
+    transform: scale(1.4);
+  }
+
+  .social {
+    position: fixed;
+    top: 450px;
+    z-index: 1;
+  }
+
   .social a {
     text-decoration: none;
   }
-  
+
   .color-correo {
     background-color: #0084c6;
   }
+
   .color-instagram {
     background-color: #f62782;
   }
+
   .color-whatsapp {
     background-color: #24cc63;
   }
 
-  .color-phone{
+  .color-phone {
     background-color: #0b6e31;
   }
-  
+
   /* .google-font {
     font-family: "Lato", sans-serif;
     font-size: 1.25rem;
   } */
-  
+
   .social-btn img {
     width: 40px;
   }
-  
+
   .social-btn p {
     color: white;
-  
+
     margin-top: 0px;
     margin-bottom: 0px;
   }
-  
+
 
 
 
 
 
 }
-
-
